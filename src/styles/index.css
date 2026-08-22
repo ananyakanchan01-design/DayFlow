@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #FFF9F3;
+    --color-surface: #FFFFFF;
+    --color-text: #24313A;
+    --color-coral: #FFB6A6;
+    --color-cream: #FFEBD3;
+    --color-mint: #9BCEC1;
+    --color-blue: #67A2C5;
+  }
+
+  .dark {
+    --color-bg: #182127;
+    --color-surface: #202B31;
+    --color-text: #F7F3EC;
+    --color-coral: #FFB6A6;
+    --color-cream: #2C3942;
+    --color-mint: #9BCEC1;
+    --color-blue: #67A2C5;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(155, 206, 193, 0.4);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(155, 206, 193, 0.7);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(239, 231, 220, 0.8);
+  }
+
+  .dark .glass-card {
+    background: rgba(32, 43, 49, 0.85);
+    border: 1px solid rgba(47, 61, 71, 0.8);
+  }
+
+  .clay-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(239, 231, 220, 0.9);
+    box-shadow: 0 12px 32px -8px rgba(36, 49, 58, 0.06), inset 0 2px 4px rgba(255, 255, 255, 0.9);
+  }
+
+  .dark .clay-card {
+    background: #202B31;
+    border: 1px solid rgba(47, 61, 71, 0.9);
+    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.05);
+  }
+
+  .custom-checkbox {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Animations */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
